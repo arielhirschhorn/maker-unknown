@@ -1,8 +1,9 @@
 import json
 import requests
 import pandas as pd
-from addict import Dict
 
+#display max rows
+pd.set_option("display.max_rows", None, "display.max_columns", None)
 
 # Function to format the JSON objects correctly
 def jprint(obj):
@@ -14,7 +15,7 @@ def jprint(obj):
 
 def get_all_objects():
     data_list = []
-    for x in range(0, 3):
+    for x in range(0, 75):
         parameters = {"search_api_fulltext": "Unknown",
                       "items_per_page": 25,
                       "page": x
@@ -33,6 +34,17 @@ def get_all_objects():
 object_df = get_all_objects()
 print("Column fields: ")
 print(object_df.columns)
-print("Amount of objects:")
-print(object_df.shape[0])
+
+
+##seeing what cultures have unknown makers and adding up counts
+s = object_df.groupby(['culture']).size()
+
+culture_counts = s.to_frame()
+print(culture_counts)
+
+
+
+
+
+
 
