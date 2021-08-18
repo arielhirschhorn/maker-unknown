@@ -17,4 +17,8 @@ July 10: Started looking at counts for each cultural label for objects with labe
 
 July 15: generalized counting function, created function to look at counts for different fields in the database, tested on full data
 
+July 31: Started exploring dates 
+
+August 5: Used NLTK to explore Description and Title fields in database
+
 
